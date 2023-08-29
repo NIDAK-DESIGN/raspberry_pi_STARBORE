@@ -1,0 +1,37 @@
+#
+
+#Ignore backup files 
+*.bak
+
+# Ignore compiled Python files
+*.pyc
+
+# Ignore video files
+/videos
+
+# Ignore Visual studio files
+v1.0.pyproj
+v1.0.sln
+
+# Ignore TAP files
+*.tap
+
+# Ignore PyCharm config directory
+/.idea
+
+#Ignore testing and other source code
+dlgInputTest.py
+events.py
+mainw.py
+sample1.py
+sample2.py
+setup.py
+
+#Ignore files to be deleted
+pxy2.txt
+pxyB.tap.txt
+pxyR.txt
+test2x.tap.txt
+configA.txt
+configDefaults.txt
+

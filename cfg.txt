@@ -1,0 +1,13 @@
+lang:2
+settingsPassword:6666
+quitPassword:5555
+gotoSpeed:20000
+LimiteCiclos:1
+CiclosOn:0
+fresaActiveLow:No
+video:How to change a tool:video.mp4:
+video:How to adjust:video.mp4:
+video:Greasing for dummies:greasing.mp4:
+video:How to blah:tool.mp4:
+video:How to blah blah:adjust.mp4:
+video:Last:greasing.mp4:

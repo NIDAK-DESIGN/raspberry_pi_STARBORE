@@ -1,0 +1,69 @@
+- ANOTACIONES -
+
+
+ENTRADAS (WachDog)
+POS_ZSEG : indica que el motor esta atras 
+Ha de vigilar esta señal en los siguientes casos :
+	No puede ejecutar G01 si no esta activa
+	No puede ejecutar M20 si no esta activa
+	No puede ejecutar M07 si no esta activa
+	No puede ejecutar M09 si no esta activa
+	No puede ejecutar M502 si no esta activa
+	No puede ejecutar M504 si no esta activa
+
+
+FINCARRERA_Z : indica que el motor llego al fondo del agujero
+Ha de vigilar esta señal en los siguientes casos :
+	No puede ejecutar M21 si no esta activa
+
+SALIDAS
+Rele tarugo: se activa con M504, se desactiva con M505
+Rele cola: se activa con M502, se desactiva con M503
+Rele cambio: se activa con M7, se desactiva con M9
+Rele cilindro Z: se activa con M20, se desactiva con M21
+Rele motor: se activa con M3, se desactiva con M5
+
+VALORES
+agujero_n : copia los valores de las posiciones de los agujeros que hemos cumplimentado en la pantalla inicial
+oofset : es el desfasaje de la distancia entre Broca y Tarugo 
+tglue : tiempo que debe quedar activada la salida rele cola
+tinsert : tiempo que debe quedar activada la salida rele tarugo 
+
+FICHEROS COMPOSICION
+HEADER : Inico del Tap
+BORING : taladros
+INSERT : Inserto de tarugo (sin cola)
+INSERT&GLUE : Inserto de tarugo con cola
+FIN : Cierre del Tap
+
+- GENERACION DE TAP -
+ 
+HEADER
+G92.1
+G54
+M21
+M03
+
+BORING
+G01 Yagujero_n F1000
+M20
+M21
+
+GLUE
+G01 Yagujero_n-offset F1000
+M502
+G04 Ptglue
+M503
+
+INSERT 
+G01 Yagujero_n-offset F1000
+M504
+G04 Ptinsert
+M505
+
+FIN
+
+
+
+- TEXTOS PRIMERA ANOTACION -
+
